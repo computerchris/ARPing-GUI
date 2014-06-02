@@ -24,7 +24,7 @@ $ok = 'yes';
 }
 if($_POST['w'] == '1'){
 $cmd .= " -w ";
-$cmd .= $_POST['TIMEOUT'];
+$cmd .= preg_replace('/[0-9]/','$_POST['TIMEOUT']); //strip all non-numeic input
 }
 $cmd .= " -I ";
 $cmd .= 
